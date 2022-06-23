@@ -1,0 +1,8 @@
+mixin commit(classBlock, avatar, altAgr, classModifier)
+  - let classBasic = 'commit'
+  - let classMod = classModifier ? ` ${classBasic}--${classModifier}` : ''
+
+  div(class=`${classBlock}__${classBasic} ${classBasic}${classMod}`)
+    .commit__user
+      img.commit__avatar(src = avatar, alt = altAgr)
+    .commit__content

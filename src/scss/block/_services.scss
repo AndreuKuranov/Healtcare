@@ -1,0 +1,133 @@
+.services {
+  position: relative;
+  padding: px2rem(92px) 0 px2rem(30px) 0;
+
+  &__container {
+  }
+
+  &__title-block {
+    margin-bottom: px2rem(80px);
+  }
+
+  // ------------ swiper ------------
+  &__swiper {
+    padding-bottom: 130px;
+  }
+
+  &__swiper-wrapper {
+    .swiper-slide-active {
+      .services__column {
+        background: #fff;
+      }
+
+      .services__column {
+        &::before {
+          transition: 1s;
+          opacity: 0.5;
+          background: $baseLightColor;
+        }
+      }
+    }
+  }
+
+  &__swiper-slide {
+  }
+
+  &__swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .swiper-pagination-bullet {
+      transition: 0.5s;
+      opacity: 1;
+      background-color: #dbe8ee;
+      width: px2rem(18px);
+      height: px2rem(18px);
+
+      &-active {
+        border-radius: 6px;
+        background: $baseLightColor;
+        width: px2rem(56px);
+        height: px2rem(15px);
+      }
+    }
+  }
+  // ----------------------------------
+
+  &__column {
+    display: flex;
+    position: relative;
+    flex: 1 1 100%;
+    justify-content: center;
+    transition: 1s;
+    border-radius: 10px;
+    background: linear-gradient(138.88deg, rgba(254, 254, 254, 0) -2.44%, #f9f9f9 -2.43%, rgba(254, 254, 254, 0.51) 98.26%);
+    max-width: 350px;
+    box-sizing: border-box;
+
+    &::before {
+      @extend %afterBefore;
+
+      bottom: 0;
+      border-radius: 0 0 10px 10px;
+      width: 100%;
+      height: px2rem(18px);
+    }
+  }
+
+  &__column-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: px2rem(50px) px2rem(15px) px2rem(40px) px2rem(15px);
+    max-width: 220px;
+  }
+
+  &__icon {
+    @include blockCenter;
+
+    width: 110px;
+    height: 90px;
+  }
+
+  &__img {
+  }
+
+  &__title {
+    margin: px2rem(10px) 0 px2rem(24px) 0;
+    text-align: center;
+    line-height: px2rem(30px);
+    color: $additionalDarkColor;
+    font: {
+      weight: 500;
+      size: 18px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    text-align: center;
+    line-height: px2rem(22px);
+    color: $textColorCard;
+    font-size: 14px;
+  }
+
+  &__background-left {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: -70;
+    width: 553px;
+    height: 560px;
+  }
+
+  &__background-right {
+    position: absolute;
+    top: 100px;
+    right: -200px;
+    z-index: -70;
+    width: 693px;
+    height: 710px;
+  }
+}

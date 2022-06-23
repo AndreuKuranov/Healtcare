@@ -1,0 +1,6 @@
+mixin list(cl, arr)
+
+  ul(class=`${cl}__list`)
+    each item in arr
+      li(class=`${cl}__item`)
+        a(class=`${cl}__link` href=item.link)= item.text

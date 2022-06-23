@@ -1,0 +1,37 @@
+-
+  let navbarItem = [
+    {text: 'Home', link: '#'},
+    {text: 'About', link: '#id'},
+    {text: 'Article', link: '#'},
+    {text: 'Services', link: '#'},
+  ]
+
+header.header
+  .header__container.container
+    +logo('header')
+
+    nav.header__navbar.navbar
+      +button(
+        'navbar', /* класс */
+        'menu', /* модификатор */
+        false, /* текст */
+        'button', /* тип */
+        'Menu', /* содержимое атрибута title */
+        '../img/icons/sprite-multi.svg#menu', /* иконка */
+        'Menu', /* альтернативный текст иконки */
+      )
+      +list(
+        'navbar',
+        navbarItem
+      )
+
+    .header__btn-block
+      +button(
+        'header', /* класс */
+        'get', /* модификатор */
+        'Get Started', /* текст */
+        'button', /* тип */
+        'Get Started', /* содержимое атрибута title */
+        false, /* иконка */
+        false, /* альтернативный текст иконки */
+      )

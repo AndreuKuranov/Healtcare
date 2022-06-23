@@ -1,0 +1,23 @@
+extends ../templates/layout/baseLayout.pug
+
+block variable
+  - let title = 'Healtcare'
+
+block header
+  include ../templates/blocks/header.pug
+
+block pageContent
+  include ../templates/blocks/search.pug
+  include ../templates/blocks/solution.pug
+  include ../templates/blocks/explore.pug
+  include ../templates/blocks/services.pug
+  include ../templates/blocks/doctors.pug
+  include ../templates/blocks/mobile-apps.pug
+  include ../templates/blocks/reviews.pug
+  include ../templates/blocks/appoinment.pug
+
+block footer
+  include ../templates/blocks/footer.pug
+
+block modal
+  include ../templates/blocks/modal.pug

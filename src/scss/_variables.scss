@@ -1,0 +1,116 @@
+$baseFontSize: 20px;
+
+$normalFontSize: 16px;
+$smallFontSize: 12px;
+$bigFontSize: 48px;
+
+$titleFontSize: 42px;
+$subTitleFontSize: 18px;
+
+$fontRoboto: 'Roboto', sans-serif;
+$fontRubik: 'Rubik', sans-serif;
+$fontPoppins: 'poppins', sans-serif;
+$fontSF: 'SF', sans-serif;
+$fontUbuntu: 'Ubuntu', sans-serif;
+$fontDM: 'dm', sans-serif;
+
+$whiteColor: #fff; // title-block / search / explore / reviews / appoinment / footer / btn /
+$blackColor: #000; // search / solution / explore / appoinment /
+
+$baseLightColor: #40a3f8; // link-list / search / services / reviews / appoinment /
+$additionalLightColor: #47c2ff; // reviews /
+
+$baseDarkColor: #3e3e3e; // social / title-block / search /
+$additionalDarkColor: #3d3d3f; // title-block / search / solution / explore / services / doctors /
+
+$baseFooterColor: #646464; // link-list / social / footer /
+$additionalFooterColor: #323232; // link-list / footer /
+$borderFooterColor: #969696; // footer /
+
+$bgColorInput: #f5f6fa; // search /
+$borderColorInput: #e1e2e4; // footer /
+$bgColorModal: #fdfefe; // header / search /
+$textColorCard: #999; // services / doctors /
+$borderColorCard: #eeeff1; // doctors /
+$textColorMenu: #6e5f5f; // header /
+$paginationColor: #dbe8ee; // services /
+
+// #454d5d; // reviews /
+// #3d3d3d; // reviews /
+// #636481; // explore / 
+// #a0a2b3; // explore / 
+// #fefefe; // explore / 
+// #e4f5fc; // search /
+// #757575; // search /
+// #a6a6a6; // mobile-apps /
+
+$buttonStyles: ( 
+  get: (
+    fF: $fontPoppins, 
+    fW: 500, 
+    fS: px2rem(15px), 
+    p: px2rem(3px) px2rem(28px) 0 px2rem(28px)
+  ),
+  menu: (
+    p: px2rem(3px) px2rem(15px) 0 px2rem(15px)
+  ),
+  search: (
+    mH: px2rem(58px), 
+    bR: 8px, 
+    p: px2rem(2px) px2rem(16.5px) 0 px2rem(16.5px)
+  ),
+  specialist: (
+    mH: px2rem(50px), 
+    lS: px2rem(0.3px), 
+    p: 0 px2rem(20px) 0 px2rem(20px)
+  ),
+  doctors: (
+    fS: px2rem(18px), 
+    p: 0 px2rem(21px) 0 px2rem(21px)
+  ),
+  appoinment: (
+    fW: 500, 
+    fS: px2rem(18px), 
+    mH: px2rem(52px), 
+    c: $baseLightColor, 
+    bC: $whiteColor, 
+    bS: 0 4px 22px rgba($blackColor, 0.05), 
+    p: px2rem(2px) px2rem(18px) 0 px2rem(18px)
+  ),
+  subscribe: (
+    fW: 500, 
+    fS: 14px, 
+    mH: px2rem(40px), 
+    lS: 0.35px, 
+    b: 1.1px solid $borderColorInput
+  ),
+  close: (
+    mH: 0,
+    bR: 50%, 
+    p: 0
+  ),
+);
+
+$iconBackground: (
+  find: (
+    b: linear-gradient(180deg, rgba(0, 158, 255, 0.12) 0%, rgba(56, 175, 255, 0.12) 100%)
+  ),
+  get: (
+    b: radial-gradient(51.35% 53.44% at 48.82% 46.56%, rgba(255, 170, 6, 0.12) 0%, rgba(255, 180, 26, 0.12) 100%)
+  ),
+  happy: (
+    b: linear-gradient(90.26deg, rgba(#5aaeff, 0.3) 0.21%, rgba(99, 203, 254, 0.3) 97.38%)
+  )
+);
+
+$socialBackgroundColor: (
+  facebook: (
+    bC: #4d77cf
+  ),
+  twitter: (
+    bC: #1da1f2
+  ),
+  linkedin: (
+    bC: #0077b5
+  )
+);

@@ -1,0 +1,33 @@
+@charset 'utf-8';
+
+@import '../../node_modules/normalize.css/normalize';
+@import '../../node_modules/swiper/swiper-bundle';
+
+@import 'helpers';
+@import 'fonts';
+@import 'variables';
+@import 'mixin';
+@import 'animations';
+@import 'html';
+@import 'wrapper';
+@import 'all';
+@import 'modal';
+
+@import 'button';
+@import 'title-block';
+@import 'swiper';
+@import 'logo';
+@import 'social';
+@import 'link-list';
+
+@import 'block/header';
+@import 'block/commit';
+@import 'block/search';
+@import 'block/solution';
+@import 'block/explore';
+@import 'block/services';
+@import 'block/doctors';
+@import 'block/mobile-apps';
+@import 'block/reviews';
+@import 'block/appoinment';
+@import 'block/footer';

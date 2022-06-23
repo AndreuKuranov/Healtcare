@@ -1,0 +1,36 @@
+.logo {
+  display: flex;
+
+  &__link {
+    @extend %link;
+
+    display: block;
+    position: relative;
+    transition: 0.5s;
+    margin: 0 px2rem(14px) 0 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $baseLightColor;
+    font: 500 px2rem(31.635px) / px2rem(47px) $fontRubik;
+
+    &::after {
+      @extend %afterBefore;
+
+      right: px2rem(-10px);
+      bottom: px2rem(11px);
+      transition: 0.5s;
+      border-radius: 50%;
+      background-color: $baseLightColor; 
+      width: px2rem(7px);
+      height: px2rem(7px);
+    }
+
+    &:hover {
+      color: $baseDarkColor;
+
+      &::after {
+        background-color: $baseDarkColor;
+      }
+    }
+  }
+}

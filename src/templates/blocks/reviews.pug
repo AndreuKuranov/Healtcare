@@ -1,0 +1,67 @@
+-
+  let reviewsItem = [
+    {
+      img: '@img/reviews/avatar1.jpg', 
+      name: 'Alan Zara dilan',
+      geolocation: 'New York, America, USA',
+      commit: 'Telehealth is fueled by digital technologies and DocTime telemedicine app has brought a great revolution in medical services specially an overpopulated country where virtual chamber can create at anywhere thoughout country',
+    },
+    {
+      img: '@img/reviews/avatar3.jpg', 
+      name: 'Alex Maxwell',
+      geolocation: 'San Francisco, USA',
+      commit: 'I visited my PCP for abdominal pain. My doctor told me that I need to see Gastroenterologist. Earlier I used to call multiple offices to schedule an appointment that suites my time.',
+    },
+    {
+      img: '@img/reviews/avatar2.jpg',
+      name: 'Dr. Tasnim zara',
+      geolocation: 'Los Angeles, USA',
+      commit: `HealthCare is enlightens my superpower each and every time...! I find DocTime a brand-able telemedicine platform with virtual waiting room, video consultation, e-prescription, beautifully planned user interface. Thank you :)`,
+    },
+    {
+      img: '@img/reviews/avatar1.jpg', 
+      name: 'Alan Zara dilan',
+      geolocation: 'New York, America, USA',
+      commit: 'Telehealth is fueled by digital technologies and DocTime telemedicine app has brought a great revolution in medical services specially an overpopulated country where virtual chamber can create at anywhere thoughout country',
+    },
+    {
+      img: '@img/reviews/avatar3.jpg', 
+      name: 'Alex Maxwell',
+      geolocation: 'San Francisco, USA',
+      commit: 'I visited my PCP for abdominal pain. My doctor told me that I need to see Gastroenterologist. Earlier I used to call multiple offices to schedule an appointment that suites my time.',
+    },
+    {
+      img: '@img/reviews/avatar2.jpg',
+      name: 'Dr. Tasnim zara',
+      geolocation: 'Los Angeles, USA',
+      commit: `HealthCare is enlightens my superpower each and every time...! I find DocTime a brand-able telemedicine platform with virtual waiting room, video consultation, e-prescription, beautifully planned user interface. Thank you :)`,
+    },
+  ]
+
+section.page__reviews.reviews
+  .reviews__container.container
+    +title-block(
+      'reviews', /* класс */
+      'Look our Clients have to say about us', /* заголовок */
+      false, /* "иконка" */
+      false, /* подзаголовок */
+      false, /* модификатор text-align: start */
+      false, /* модификатор line-height */
+      false /* модификатор letter-spacing */
+    )
+    .reviews__swiper.swiper
+      .swiper-wrapper.reviews__swiper-wrapper
+        each item in reviewsItem
+          .swiper-slide.reviews__swiper-slide
+            .reviews__column
+              .reviews__icon-block
+                img.reviews__avatar(src=item.img, alt="avatar")
+              .reviews__row
+                h4.reviews__name= item.name
+                .reviews__rating
+              a.reviews__geolocation= item.geolocation
+              p.reviews__commit= item.commit
+
+      .swiper-button-prev.reviews__swiper-button.reviews__swiper-button-prev
+      .swiper-button-next.reviews__swiper-button.reviews__swiper-button-next
+  img.reviews__background-left(src="@img/reviews/Layerblur11.png", alt="background")

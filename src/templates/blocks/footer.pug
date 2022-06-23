@@ -1,0 +1,97 @@
+-
+  let socialItem = [
+    {
+      title: 'facebook',
+      href: '#',
+    },
+    {
+      title: 'twitter',
+      href: '#',
+    },
+    {
+      title: 'linkedin',
+      href: '#',
+    },
+  ]
+
+  let categoryItem = {
+    title: 'Category',
+    list: [
+      {text: 'Home', link: '#'},
+      {text: 'About', link: '#'},
+      {text: 'Services', link: '#'},
+      {text: 'Reviews', link: '#'},
+      {text: 'Article', link: '#'},
+    ]
+  }
+
+  let aboutItem = {
+    title: 'About',
+    list: [
+      {text: 'Partners', link: '#'},
+      {text: 'Careers', link: '#'},
+      {text: 'Press', link: '#'},
+      {text: 'Community', link: '#'},
+    ]
+  }
+
+  let developedItem = [
+    {text: 'Privacy', link: '#'},
+    {text: 'Security', link: '#'},
+    {text: 'Terms', link: '#'},
+  ]
+
+footer.footer
+  .footer__footer-top.footer-top
+    .footer-top__container.container
+      address.footer-top__info.info  
+        +logo('info')
+        .info__adress
+          a.info__link(href="https://www.google.com/maps" target="_blank" title="Google maps") Metairie, 3689 Bassel Street, LA, Louisiana
+        .info__phone
+          a.info__link(href="tel:225-788-5489" title="Contact") Contact us: 225-788-5489
+        +social(
+          'footer-top',
+          socialItem,
+          'dark'
+        )
+      .footer-top__column
+        each item in [categoryItem, aboutItem]
+          +list-wrapper(
+            'footer-top',
+            'link-list',
+            'category',
+            item.list,
+            item.title
+          )
+      .footer-top__subscribe.subscribe
+        h5.subscribe__title Subscribe newsletter
+        p.subscribe__text Sign up for tips, new destinations, and exclusive promos.
+        form.subscribe__form
+          input.subscribe__input(
+            id="email" 
+            name="email" 
+            type="email"
+            placeholder="Enter your email"
+            required
+            title="e-mail: admin@mail.ru"
+          )
+          +button(
+            'subscribe', /* класс */
+            'subscribe', /* модификатор */
+            'Subscribe', /* текст */
+            'submit', /* тип */
+            'Subscribe', /* содержимое атрибута title */
+            false, /* иконка */
+            false, /* альтернативный текст иконки */
+          )
+  .footer__footer-bottom.footer-bottom
+    .footer-bottom__container.container
+      p.footer-bottom__copy © 2021 Healthcare - All rights reserved.
+      +list-wrapper(
+        'footer-bottom',
+        'link-list',
+        'developed',
+        developedItem,
+        false
+      )

@@ -1,0 +1,12 @@
+mixin title-block(classBlock, title, icon, text, classModifierStart, classModifierLineHeight, classModifierLetterSpacing)
+  - let classBasic = 'title-block'
+  - let classModStart = classModifierStart ? ` ${classBasic}--start` : ''
+  - let classModLineHeight = classModifierLineHeight ? ` ${classBasic}--line-height` : ''
+  - let classModLetterSpacing = classModifierLetterSpacing ? ` ${classBasic}--letter-spacing` : ''
+
+  div(class=`${classBlock}__${classBasic} ${classBasic}${classModStart}${classModLineHeight}${classModLetterSpacing}`)
+    h2.title-block__title= title
+    if icon
+      .title-block__icon
+    if text
+      p.title-block__sub-title= text

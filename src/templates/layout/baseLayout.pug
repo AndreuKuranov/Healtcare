@@ -1,0 +1,30 @@
+block variable
+
+include ../mixin/button.pug
+include ../mixin/title-block.pug
+include ../mixin/commit.pug
+include ../mixin/logo.pug
+include ../mixin/social.pug
+include ../mixin/list.pug
+include ../mixin/list-wrapper.pug
+include ../mixin/background.pug
+
+<!DOCTYPE html>
+html(lang="en")
+
+  include ../blocks/head.pug
+    title= title
+  body.body
+    .wrapper
+
+      block header
+      main.page
+
+        block pageContent
+
+      block footer
+
+      block modal
+
+    block scripts
+      script(src="./js/app.min.js")

@@ -1,0 +1,148 @@
+.reviews {
+  position: relative;
+  padding: px2rem(120px) 0 px2rem(100px) 0;
+
+  &__container {
+  }
+
+  &__title-block {
+    margin-bottom: px2rem(82px);
+  }
+
+  // ------------ swiper ------------
+  &__swiper {
+  }
+
+  &__swiper-wrapper {
+  }
+
+  &__swiper-button {
+    position: absolute;
+    transition: 0.5s;
+    border-radius: px2rem(5px);
+    box-shadow: 0 4px 22px rgba($blackColor, 0.05);
+    background: $baseLightColor;
+    width: px2rem(33.45px);
+    height: px2rem(32px);
+
+    &::after {
+      border-bottom: px2rem(3px) solid $whiteColor;
+      border-left: px2rem(3px) solid $whiteColor;
+      width: px2rem(9px);
+      height: px2rem(9px);
+      font-family: none;
+      content: '';
+    }
+
+    &[aria-disabled='true'] {
+      opacity: 1;
+      background: linear-gradient(133.16deg, rgba(154, 208, 255, 0.1065) 0%, rgba(111, 188, 255, 0.1005) 112.21%);
+
+      &::after {
+        border-color: $baseLightColor;
+      }
+    }
+  }
+
+  &__swiper-button-prev {
+    top: 52%;
+    left: 5px;
+
+    &::after {
+      transform: rotate(45deg) translateX(2px) translateY(-2px);
+    }
+  }
+
+  &__swiper-button-next {
+    top: 52%;
+    right: px2rem(5px);
+
+    &::after {
+      transform: rotate(-135deg) translateX(2px) translateY(-2px);
+    }
+  }
+  // ----------------------------------
+
+  &__column {
+    position: relative;
+    margin-top: px2rem(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 22px rgba($blackColor, 0.05);
+    background: linear-gradient(132.1deg, rgba(255, 255, 255, 0.88) 0.65%, #fafafa 103.13%);
+    padding: px2rem(22px) px2rem(17px) px2rem(36px) px2rem(48px);
+    max-width: 371px;
+    box-sizing: border-box;
+
+    &::before {
+      @extend %afterBefore;
+
+      top: px2rem(-10px);
+      right: px2rem(42px);
+      border-radius: 50%;
+      background: url('../img/reviews/quotes.svg') no-repeat 50% 50%, linear-gradient(105.02deg, $additionalLightColor 5.27%, rgba(99, 203, 254, 0.65) 168.76%);
+      width: px2rem(38px);
+      height: px2rem(38px);
+    }
+  }
+
+  &__icon-block {
+    @include blockCenter;
+
+    margin-right: px2rem(26px);
+  }
+
+  &__avatar {
+    border-radius: 50%;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__name {
+    margin: px2rem(6px) 0 0 0;
+    color: #3d3d3d;
+    font: {
+      weight: 700;
+      size: px2rem(20px);
+    }
+  }
+
+  &__rating {
+    margin: px2rem(9px) 0 0 5px;
+    background: url('../img/reviews/Vector.svg') repeat 0 0;
+    width: 75px;
+    height: 12px;
+  }
+
+  &__geolocation {
+    @extend %link;
+
+    display: block;
+    margin: px2rem(8px) 0 0 0;
+    color: rgba($color: $additionalLightColor, $alpha: 0.65);
+    font: 14px $fontUbuntu;
+  }
+
+  &__commit {
+    display: -webkit-box;
+    margin: px2rem(22px) 0 0 0;
+    max-height: 152px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: px2rem(25px);
+    color: #454d5d;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+  }
+
+  &__background-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -90;
+    width: 681px;
+    height: 689px;
+  }
+}

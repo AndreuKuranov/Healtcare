@@ -1,0 +1,10 @@
+mixin list-wrapper(classBlock, classBasic, classModifier, arr, titleAgr)
+  - let classMod = classModifier ? ` ${classBasic}--${classModifier}` : ''
+
+  div(class=`${classBlock}__${classBasic} ${classBasic}${classMod}`)
+    if titleAgr
+      h5(class=`${classBasic}__title`)= titleAgr
+    +list(
+      classBasic,
+      arr
+    )

@@ -1,0 +1,73 @@
+-
+  let modalItem = [
+    {img: '@img/search/phone.png', class: 'phone'},
+    {img: '@img/search/camera.png', class: 'camera'},
+    {img: '@img/search/message.png', class: 'message'},
+  ]
+
+  let bgSearch = [
+    {img: '@img/search/background.jpg', mod: '', alt: 'Background'},
+    {img: '@img/search/Layerblurleft.png', mod: '-left', alt: 'Background'},
+    {img: '@img/search/Layerblurright.png', mod: '-right', alt: 'Background'},
+    {img: '@img/search/bgBottom.png', mod: '-bottom', alt: 'Background'},
+  ]
+
+section.page__search.search
+  .search__container.container
+    .search__info
+      each item in modalItem
+        div(class=`search__modal search__modal--${item.class}` data-name=item.class)
+          img.search__icon(src=item.img, alt=item.class)
+    .search__body
+      .search__content
+        h1.search__title Find and search your <br/>
+          span.search__title-spaan suitable doctor’s
+        .search__sub-tiile Join us and take care of yourself and your family with health services that will make you feel confident and safe in your daily life.
+      form.search__form.form-search(action="/" method="post")
+        .form-search__body
+          .form-search__column
+            input.form-search__input(
+              id="nameDoctor" 
+              name="nameDoctor" 
+              type="text" 
+              placeholder="Find your doctor"
+              pattern="^[A-Za-zА-Яа-яЁё]+$"
+              tabindex="1"
+              title="name doctor"
+            )
+          .form-search__column
+            select.form-search__input.form-search__select(
+              name="geolocation" 
+              id="geolocation"
+              tabindex="2"
+            )
+              option(
+                selected 
+                disabled 
+                value=""
+              ) New York, USA
+        .form-search__btn-block
+          +button(
+            'form-search', /* класс */
+            'search', /* модификатор */
+            false, /* текст */
+            'submit', /* тип */
+            'Search', /* содержимое атрибута title */
+            '../img/icons/sprite-multi.svg#search', /* иконка */
+            'search', /* альтернативный текст иконки */
+          )
+      .search__footer
+        .search__likee.like
+          img.like__img(src="@img/search/heart.png", alt="heart")
+          .like__counter 2500+
+          .like__text Happy Patients
+        +commit(
+          'search',
+          '@img/search/user.jpg',
+          'user',
+          false
+        )
+    .search__background-block.search__background-block--doctor
+      img.search__background-img(src="@img/search/DoctorBack.png" alt="Background")
+  +background('search', bgSearch)
+img.wrapper__background(src="@img/wrapper/Rectangle.png", alt="Background")

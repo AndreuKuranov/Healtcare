@@ -1,0 +1,90 @@
+.title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    margin: 0;
+    text-align: center;
+    line-height: px2rem(49px);
+    letter-spacing: px2rem(0.85px);
+    color: $baseDarkColor;
+    font: {
+      weight: 500;
+      size: px2rem($titleFontSize);
+    }
+
+    @media (max-width: 992px) {
+      font-size: px2rem(40px);
+    }
+    @media (max-width: 768px) {
+      font-size: px2rem(38px);
+    }
+    @media (max-width: 576px) {
+      font-size: px2rem(36px);
+    }
+    @media (max-width: 480px) {
+      font-size: px2rem(34px);
+    }
+  }
+
+  &__icon {
+    position: relative;
+    margin: 16px 0 -8px 0;
+    background: url('../img/doctors/Titletag.svg') no-repeat 0 0;
+    width: 81px;
+    height: 15px;
+  }
+
+  &__sub-title {
+    margin: px2rem(24px) 0 0 0;
+    max-width: 488px;
+    text-align: center;
+    line-height: px2rem(30px);
+    letter-spacing: px2rem(0.35px);
+    color: rgba($additionalDarkColor, 0.7);
+    font-size: px2rem($subTitleFontSize);
+  }
+
+  &--start {
+    align-items: flex-start;
+
+    .title-block__title {
+      margin: 0 0 0 px2rem(5px);
+      text-align: start;
+    }
+
+    .title-block__sub-title {
+      padding: px2rem(10px) 0 0 0;
+      max-width: 100%;
+      text-align: start;
+
+      @media (max-width: 768px) {
+        border-radius: 10px;
+        background-color: rgba($color: $whiteColor, $alpha: 0.5);
+        padding: 0 5px;
+        color: rgba($additionalDarkColor, 0.9);
+      }
+    }
+  }
+
+  &--line-height {
+    .title-block__title {
+      max-width: 100%;
+      line-height: px2rem(60px);
+
+      @media (max-width: 768px) {
+        line-height: px2rem(55px);
+      }
+      @media (max-width: 480px) {
+        line-height: px2rem(45px);
+      }
+    }
+  }
+
+  &--letter-spacing {
+    .title-block__title {
+      letter-spacing: 0;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+// анимация выпадающего меню 
+@keyframes rotateListOn {
+  0% {
+    transform: translate3d(0, -90%, 0) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) rotate3d(1, 0, 0, 0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateListOff {
+  0% {
+    transform: translate3d(0, 0, 0) rotate3d(1, 0, 0, 0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, -90%, 0) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+}
+// ------------------------------------
+
+// анимация модального окна 
+@keyframes backInLeft {
+  0% {
+    transform: translateX(-100vw) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    transform: translateX(0) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes backOutRight {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translateX(0) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateX(100vw) scale(0.7);
+    opacity: 0.7;
+  }
+}
+// ------------------------------------
+
+// анимация заднего фона модального окна 
+@keyframes opacityOn {
+  0% {
+    background-color: rgba($blackColor , 0);
+  }
+
+  100% {
+    background-color: rgba($blackColor , 0.3);
+  }
+}
+
+@keyframes opacityOff {
+  0% {
+    background-color: rgba($blackColor , 0.3);
+  }
+
+  100% {
+    background-color: rgba($blackColor , 0);
+  }
+}
+// ------------------------------------

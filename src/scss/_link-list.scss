@@ -1,0 +1,48 @@
+.link-list {
+  &--category {
+    .link-list__list {
+      flex-direction: column;
+    }
+  }
+
+  &--developed {
+    font-family: $fontDM;
+
+    .link-list__list {
+      gap: px2rem(54px);
+    }
+  }
+
+  &__title {
+    margin: 0 0 px2rem(22px) 0;
+    line-height: 16px;
+    color: $additionalFooterColor;
+    font: {
+      weight: 700;
+      size: $normalFontSize;
+    }
+  }
+
+  &__list {
+    @extend %list;
+
+    display: flex;
+    gap: px2rem(19px);
+  }
+
+  &__item {
+  }
+
+  &__link {
+    @extend %link;
+
+    transition: 0.5s;
+    line-height: 14px;
+    color: $baseFooterColor;
+    font-size: 14px;
+
+    &:hover {
+      color: $baseLightColor;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.body {
+  height: 100%;
+  font: normal 400 px2rem($normalFontSize) $fontRoboto;
+
+  &--scroll {
+    overflow: hidden;
+  }
+
+  &--padding {
+    padding-right: 17px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1174px;
+  box-sizing: content-box;
+}
+
+.ibg {
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+%link {
+  text-decoration: none;
+  color: inherit;
+}
+
+%list {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+%afterBefore {
+  display: block;
+  position: absolute;
+  content: '';
+}

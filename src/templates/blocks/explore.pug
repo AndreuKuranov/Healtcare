@@ -1,0 +1,78 @@
+-
+  let listItems = [
+    'Search your specialist & Online consultations anywhere',
+    'Consultation our top specialists',
+    'Doctors are available 24/7'
+  ]
+
+  let achievementItems = [
+    {title: 'Experience', text: '5 Years'},
+    {title: 'Patients', text: '3.5K'},
+    {title: 'Reviews', text: '2.5K'},
+  ]
+
+  let bgExplore = [
+    {img: '@img/explore/Layerblur6.png', mod: '', alt: 'Background'},
+    {img: '@img/explore/Layerblur.png', mod: '-right', alt: 'Background'},
+  ]
+
+  let bgAdditionallyExplore = [
+    {img: '@img/explore/crello.png', mod: '-img--doctor', alt: 'Background'},
+    {img: '@img/explore/RectangleShape.png', mod: '-img--blue', alt: 'Background'},
+    {img: '@img/explore/Elips.png', mod: '-img--dot', alt: 'Background'}
+  ]
+
+
+section.page__explore.explore
+  .explore__container.container
+    .explore__body
+      +title-block(
+        'explore', /* класс */
+        'Best quality service with our experience doctors', /* заголовок */
+        false, /* "иконка" */
+        `With our top doctors, we are able to provide best medical services above average 
+        We have highly experienced doctors, so don't worry They are also very talented in their fields`, /* подзаголовок */
+        true, /* модификатор text-align: start */
+        false, /* модификатор line-height */
+        false /* модификатор letter-spacing */
+      )
+      ul.explore__list
+        each item in listItems
+          li.explore__item= item
+      .explore__btn-block
+        +button(
+          'explore', /* класс */
+          'specialist', /* модификатор */
+          'Explore specialists', /* текст */
+          'button', /* тип */
+          'Explore specialists', /* содержимое атрибута title */
+          '../img/icons/sprite-multi.svg#group', /* иконка */
+          'Explore specialists', /* альтернативный текст иконки */
+        )
+    .explore__footer
+      .explore__info-doctor.info-doctor
+        .info-doctor__wrapper
+          img.info-doctor__icon(src="@img/explore/Love.svg", alt="Love")
+          .info-doctor__body
+            img.info-doctor__avatar(src="@img/explore/Ellipse7.jpg", alt="doctor")
+            .info-doctor__content
+              .info-doctor__name Dr. Khalid Abbed
+              .info-doctor__row
+                .info-doctor__position-at-work Carddiologist (MBBS)
+                .info-doctor__rating 5.0
+          ul.info-doctor__achievements
+            each item in achievementItems
+              li.info-doctor__column
+                .info-doctor__title= item.title
+                .info-doctor__text= item.text
+          .info-doctor__job-block
+            .info-doctor__job Mayo Clinic Hospital
+      +commit(
+        'explore',
+        '@img/explore/cheerful.jpg',
+        'user',
+        false
+      )
+
+    +background('explore', bgAdditionallyExplore)
+  +background('explore', bgExplore)

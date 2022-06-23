@@ -1,0 +1,37 @@
+.social {
+  @extend %list;
+
+  display: flex;
+
+  &--dark {
+    .social__link {
+      background-color: $baseFooterColor;
+    }
+  }
+
+  &__item {
+  }
+
+  &__link {
+    @extend %link;
+    @include blockCenter;
+
+    transition: 0.5s;
+    border-radius: 50%;
+    width: 31px;
+    height: 31px;
+
+    &:hover {
+      opacity: 0.7;
+      box-shadow: 2px 2px 5px rgba($baseDarkColor, 0.7);
+    }
+
+    @include modStyle($socialBackgroundColor);
+  }
+
+  &__svg {
+    padding: 0 0 2px 0;
+    width: 19px;
+    height: 18px;
+  }
+}

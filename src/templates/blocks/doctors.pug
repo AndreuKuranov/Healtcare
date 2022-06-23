@@ -1,0 +1,114 @@
+-
+  let doctorsItem = [
+    {
+      img: '@img/doctors/doctor1.jpg', 
+      title: 'Dr Amanda Linda',
+      subTitle: 'Dentist Specilist',
+      social: [
+        {
+          title: 'facebook',
+          href: '#',
+        },
+        {
+          title: 'twitter',
+          href: '#',
+        },
+        {
+          title: 'linkedin',
+          href: '#',
+        },
+      ]
+    },
+    {
+      img: '@img/doctors/doctor3.jpg', 
+      title: 'Dr. Alisa Rahman',
+      subTitle: 'Carddiologist Specilist',
+      social: [
+        {
+          title: 'facebook',
+          href: '#',
+        },
+        {
+          title: 'twitter',
+          href: '#',
+        },
+        {
+          title: 'linkedin',
+          href: '#',
+        },
+      ]
+    },
+    {
+      img: '@img/doctors/doctor4.jpg', 
+      title: 'Dr. Anthony Fauci',
+      subTitle: 'Neurology Specilist',
+      social: [
+        {
+          title: 'facebook',
+          href: '#',
+        },
+        {
+          title: 'twitter',
+          href: '#',
+        },
+        {
+          title: 'linkedin',
+          href: '#',
+        },
+      ]
+    },
+    {
+      img: '@img/doctors/doctor2.png', 
+      title: 'Dr. Khalid Abbed',
+      subTitle: 'Cancer Specilist',
+      social: [
+        {
+          title: 'facebook',
+          href: '#',
+        },
+        {
+          title: 'twitter',
+          href: '#',
+        },
+        {
+          title: 'linkedin',
+          href: '#',
+        },
+      ]
+    },
+  ]
+
+section.page__doctors.doctors
+  .doctors__container.container
+    +title-block(
+      'doctors', /* класс */
+      'Meet Our Certified Online Doctors', /* заголовок */
+      true, /* "иконка" */
+      'Our online doctors have an average of 15 years experience and a 98% satisfaction rating, they really set us apart!', /* подзаголовок */
+      false, /* модификатор text-align: start */
+      false, /* модификатор line-height */
+      false /* модификатор letter-spacing */
+    )
+    .doctors__body
+      each item in doctorsItem
+        .doctors__column
+          article.doctors__item
+            .doctors__img-block
+              img.doctors__img(src=item.img, alt=item.title)
+            h4.doctors__title= item.title
+            p.doctors__sub-title= item.subTitle
+            +social(
+              'doctors',
+              item.social
+            )
+    .doctors__btn-block
+      +button(
+        'doctors', /* класс */
+        'doctors', /* модификатор */
+        'Explore All Doctors', /* текст */
+        'button', /* тип */
+        'Explore All Doctors', /* содержимое атрибута title */
+        false, /* иконка */
+        false, /* альтернативный текст иконки */
+      )
+  img.doctors__background-left(src="@img/doctors/Layerblur8.png", alt="Background")

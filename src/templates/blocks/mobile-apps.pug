@@ -1,0 +1,39 @@
+-
+  let linkItems = [
+    {
+      href: '#',
+      img: '@img/mobile-apps/GooglePlay.svg',
+      title: 'Google Play',
+    },
+    {
+      href: '#',
+      img: '@img/mobile-apps/AppStore.svg',
+      title: 'Google Play',
+    }
+  ]
+
+  let bgMobileApps = [
+    {img: '@img/mobile-apps/Layerblur10.png', mod: '-left', alt: 'Background'},
+    {img: '@img/mobile-apps/Layerblur9.png', mod: '-right', alt: 'Background'},
+  ]
+
+section.page__mobile-apps.mobile-apps
+  .mobile-apps__container.container
+    .mobile-apps__body
+      +title-block(
+        'mobile-apps', /* класс */
+        'Mobile apps are available Get HealthCare for free!', /* заголовок */
+        false, /* "иконка" */
+        `Get on-demand access to a doctor on your phone with the free HealthCare mobile app. 
+        Download and register on our app for free and feel safe for all your family`, /* подзаголовок */
+        true, /* модификатор text-align: start */
+        true, /* модификатор line-height */
+        false  /* модификатор letter-spacing */
+      )
+      ul.mobile-apps__list
+        each item in linkItems
+          li.mobile-apps__item
+            a.mobile-apps__link(href=item.href)
+              img.mobile-apps__img(src=item.img, alt=item.title)
+    img.mobile-apps__background(src="@img/mobile-apps/Mockup.png", alt="background")
+  +background('mobile-apps', bgMobileApps)

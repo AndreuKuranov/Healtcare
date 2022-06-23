@@ -1,0 +1,41 @@
+-
+  let cardItems = [
+    {
+      img: '@img/solution/search.png', 
+      classModifier: 'find', 
+      title: 'Find best doctor’s', 
+      text: `Find your doctor easily with a minimum of effort. We've kept everything organised for you.`
+    },
+    {
+      img: '@img/solution/calendar.png', 
+      classModifier: 'get', 
+      title: 'Get Appointment', 
+      text: `Ask for an appointment of the doctor quickly with almost a single click. We take care of the rest.`
+    },
+    {
+      img: '@img/solution/healthcare.png', 
+      classModifier: 'happy', 
+      title: 'Happy Consultations', 
+      text: `Do consultations and  take the service based on your appointment. Get back to good health`
+    },
+  ]
+
+section.page__solution.solution(id='id')
+  .solution__container.container
+    +title-block(
+      'solution', /* класс */
+      '3 Easy Steps and Get Your Solution', /* заголовок */
+      false, /* "иконка" */
+      false, /* подзаголовок */
+      false, /* модификатор text-align: start */
+      false, /* модификатор line-height */
+      true /* модификатор letter-spacing */
+    )
+    .solution__body
+      each item in cardItems
+        .solution__column
+          .solution__item
+            div(class=`solution__icon solution__icon--${item.classModifier}`)
+              img.solution__img(src=item.img, alt=item.title)
+            h3.solution__title= item.title
+            p.solution__text= item.text

@@ -1,0 +1,65 @@
+@mixin makeButton ($fontFamily, $fontWeight, $fontSize, $minHeight, $border, $borderRadius, $letterSpacing, $color, $backgroundColor, $boxShadow, $padding) {
+  @if $fontFamily { font-family: $fontFamily; }
+  @if $fontWeight { font-weight: $fontWeight; }
+  @if $fontSize { font-size: $fontSize; }
+  @if $minHeight { min-height: $minHeight; }
+  @if $border { border: $border; }
+  @if $borderRadius { border-radius: $borderRadius; }
+  @if $letterSpacing { letter-spacing: $letterSpacing; }
+  @if $color { color: $color; }
+  @if $backgroundColor { background-color: $backgroundColor; }
+  @if $boxShadow { box-shadow: $boxShadow; }
+  @if $padding { padding: $padding; }
+}
+
+@mixin createThemeButtons ($valuesWithStyles) {
+  @each $status, $btnStyle in ($valuesWithStyles) {
+    &--#{$status} {
+      $fF: false; $fW: false; $fS: false; $mH: false; $b: false; $bR: false; $lS: false; $c: false; $bC: false; $bS: false; $p: false;
+
+      @each $c1, $c2 in ($btnStyle) {
+        @if $c1 == fF {
+          $fF: $c2;
+        } @else if $c1 == fW {
+          $fW: $c2;
+        } @else if $c1 == fS {
+          $fS: $c2;
+        } @else if $c1 == mH {
+          $mH: $c2;
+        } @else if $c1 == b {
+          $b: $c2;
+        } @else if $c1 == bR {
+          $bR: $c2;
+        } @else if $c1 == lS {
+          $lS: $c2;
+        } @else if $c1 == c {
+          $c: $c2;
+        } @else if $c1 == bC {
+          $bC: $c2;
+        } @else if $c1 == bS {
+          $bS: $c2;
+        } @else if $c1 == p {
+          $p: $c2;
+        }
+      }
+
+      @include makeButton($fontFamily: $fF, $fontWeight: $fW, $fontSize: $fS, $minHeight: $mH, $border: $b, $borderRadius: $bR, $letterSpacing: $lS, $color: $c, $backgroundColor: $bC, $boxShadow: $bS, $padding: $p);
+    }
+  }
+}
+
+@mixin blockCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin modStyle($agr) {
+  @each $status, $style in ($agr) {
+    &--#{$status} {
+      @each $c1, $c2 in ($style) {
+        background: $c2;
+      }
+    }
+  }
+}

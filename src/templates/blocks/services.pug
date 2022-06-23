@@ -1,0 +1,63 @@
+-
+  let cardsItem = [
+    {
+      img: '@img/services/Cardiology.png', 
+      title: 'Cardiology',
+      text: `Our cardiologists are skilled at the diagnosing and treating diseases of the cardiovascular system.`
+    },
+    {
+      img: '@img/services/Pulmonology.png', 
+      title: 'Pulmonology',
+      text: `Our Pulmonologist are skilled at diagnosing treating diseases of the Pulmonology system.`
+    },
+    {
+      img: '@img/services/Medicine.png', 
+      title: 'Medicine', 
+      text: `Our medcine doctor are skilled at diagnosing treating diseases of the latest medicne system.`
+    },
+    {
+      img: '@img/services/Cardiology.png', 
+      title: 'Cardiology',
+      text: `Our cardiologists are skilled at the diagnosing and treating diseases of the cardiovascular system.`
+    },
+    {
+      img: '@img/services/Pulmonology.png', 
+      title: 'Pulmonology',
+      text: `Our Pulmonologist are skilled at diagnosing treating diseases of the Pulmonology system.`
+    },
+    {
+      img: '@img/services/Medicine.png', 
+      title: 'Medicine', 
+      text: `Our medcine doctor are skilled at diagnosing treating diseases of the latest medicne system.`
+    },
+  ]
+
+  let bgServices = [
+    {img: '@img/services/Layerblur2.png', mod: '-left', alt: 'Background'},
+    {img: '@img/services/Layerblur3.png', mod: '-right', alt: 'Background'}
+  ]
+
+section.page__services.services
+  .services__container.container
+    +title-block(
+      'services', /* класс */
+      'Our Service', /* заголовок */
+      false, /* "иконка" */
+      'Our doctors have high qualified skills and are guaranteed to help you recover from your disease.', /* подзаголовок */
+      false, /* модификатор text-align: start */
+      false, /* модификатор line-height */
+      false /* модификатор letter-spacing */
+    )
+    .services__swiper.swiper
+      .swiper-wrapper.services__swiper-wrapper
+        each item in cardsItem
+          .swiper-slide.services__swiper-slide
+            .services__column
+              .services__column-container
+                .services__icon
+                  img.services__img(src = item.img, alt = item.title)
+                h3.services__title= item.title
+                p.services__text= item.text
+
+      .swiper-pagination.services__swiper-pagination
+  +background('services', bgServices)

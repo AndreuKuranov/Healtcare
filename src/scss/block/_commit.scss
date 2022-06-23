@@ -1,0 +1,48 @@
+.commit {
+  display: inline-flex;
+  transition: 0.5s;
+  border-radius: 11px;
+  background-color: #fff;
+  padding: px2rem(11px) 27px px2rem(7px) px2rem(22px);
+  filter: drop-shadow(0 4px 22px rgba(0, 0, 0, 0.05));
+
+  &__user {
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+  }
+
+  &__content {
+    position: relative;
+    margin: 6px 0 0 9px;
+    background: url('../img/search/star.svg') repeat 0 0;
+    width: 110px;
+    height: 15px;
+
+    &::after, 
+    &::before {
+      @extend %afterBefore;
+    }
+
+    &::after {
+      bottom: -9px;
+      left: 4px;
+      border-radius: 2px;
+      background: #e4f3ff;
+      width: 121px;
+      height: 4px;
+    }
+
+    &::before {
+      bottom: -19px;
+      left: 4px;
+      border-radius: 2px;
+      background: #e4f3ff;
+      width: 100px;
+      height: 4px;
+    }
+  }
+}

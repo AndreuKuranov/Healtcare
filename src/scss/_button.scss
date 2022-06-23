@@ -1,0 +1,204 @@
+.btn {
+  @include blockCenter;
+
+  transition: 0.5s;
+  border: none;
+  border-radius: 5px;
+  background-color: $baseLightColor;
+  padding: 0 px2rem(10px);
+  min-height: px2rem(47px);
+  text-align: center;
+  line-height: 120%;
+  color: $whiteColor;
+  gap: px2rem(8px);
+
+  &:disabled {
+    background-color: rgba($baseDarkColor, 0.3);
+  }
+
+  &:hover:not(:disabled) {
+    background-color: rgba($baseLightColor, 0.7);
+    cursor: pointer;
+  }
+
+  @include createThemeButtons($buttonStyles);
+
+  &--get {
+    @media (max-width: 768px) {
+      padding: px2rem(3px) px2rem(15px) 0 px2rem(15px);
+    }
+
+    .btn__icon {
+      width: px2rem(35px); 
+      height: px2rem(35px);
+    }
+  }
+
+  &--menu {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+
+    .btn__icon {
+      width: px2rem(35px); 
+      height: px2rem(35px);
+    }
+  }
+
+  &--search {
+    .btn__icon {
+      width: px2rem(37px);
+      height: px2rem(42px);
+    }
+  }
+
+  &--specialist {
+    .btn__icon {
+      width:  px2rem(15px); 
+      height:  px2rem(13px);
+    }
+  }
+
+  &--appoinment {
+    &:hover:not(:disabled) {
+      background-color: rgba($whiteColor, 0.7);
+    }
+  }
+
+  &--close {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__icon {
+  }
+
+  &__text {
+  }
+}
+
+// .btn {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: center;
+//   border: none;
+//   gap: px2rem(8px);
+//   transition: 0.5s;
+//   line-height: 120%;
+
+//   min-height: px2rem(47px);
+//   border-radius: 5px;
+//   background-color: $baseLightColor;
+//   color: $whiteColor;
+//   padding: 0 px2rem(10px);
+
+//   &--get{
+//     font-family: $fontPoppins;
+//     font-weight: 500;
+//     font-size: px2rem(15px);
+
+//     padding: px2rem(3px) px2rem(28px) 0 px2rem(28px);
+
+//     @media (max-width: 768px) {
+//       padding: px2rem(3px) px2rem(15px) 0 px2rem(15px);
+//     }
+
+//     .btn__text {
+//       @media (max-width: 768px) {
+//         display: none;
+//       }
+//     }
+//     .btn__icon {
+//       width: px2rem(35px); 
+//       height: px2rem(35px);
+//       display: none;
+
+//       @media (max-width: 768px) {
+//         display: block;
+//       }
+//     }
+//   }
+
+//   &--menu {
+//     padding: px2rem(3px) px2rem(15px) 0 px2rem(15px);
+//     display: none;
+
+//     @media (max-width: 768px) {
+//       display: block;
+//     }
+
+//     .btn__icon {
+//       width: px2rem(35px); 
+//       height: px2rem(35px);
+//     }
+//   }
+
+//   &--search{
+//     min-height: px2rem(58px);
+//     padding: px2rem(2px) px2rem(16.5px) 0 px2rem(16.5px);
+
+//     border-radius: 8px;
+
+//     .btn__icon {
+//       width: px2rem(37px);
+//       height: px2rem(42px);
+//     }
+//   }
+
+//   &--specialist {
+//     min-height: px2rem(50px);
+//     padding: 0 px2rem(20px) 0 px2rem(20px);
+
+//     letter-spacing: px2rem(0.3px);
+
+//     .btn__icon {
+//       width:  px2rem(15px); 
+//       height:  px2rem(13px);
+//     }
+//   }
+
+//   &--doctors {
+//     font-size: px2rem(18px);
+//     padding: 0 px2rem(21px) 0 px2rem(21px);
+//   }
+
+//   &--appoinment {
+//     font-weight: 500;
+//     font-size: px2rem(18px);
+//     min-height: px2rem(52px);
+//     padding: px2rem(2px) px2rem(18px) 0 px2rem(18px);
+
+//     color: $baseLightColor;
+//     background-color: $whiteColorFFF;
+//     box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.05);
+
+//     &:hover:not(:disabled) {
+//       background-color: rgba($whiteColorFFF, 0.7);
+//     }
+//   }
+//   &--subscribe {
+//     font-weight: 500;
+//     font-size: 14px;
+//     min-height: px2rem(40px);
+
+//     letter-spacing: 0.35px;
+//     border: 1.1px solid #E1E2E4;
+//   }
+
+//   &:disabled {
+//     background-color: rgba($baseDarkColor, 0.3);
+//   }
+
+//   &:hover:not(:disabled) {
+//     background-color: rgba($baseLightColor, 0.7);
+//     cursor: pointer;
+//   }
+
+//   &__icon {
+//   }
+//   &__text {
+//   }
+// }

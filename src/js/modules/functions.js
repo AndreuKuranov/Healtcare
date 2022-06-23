@@ -1,0 +1,1 @@
+export const checkClass = (element, cl) => element.classList.contains(cl);

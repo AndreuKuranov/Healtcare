@@ -1,0 +1,18 @@
+html {
+  transition: 0.5s;
+  font-size: $baseFontSize;
+
+  @media (max-width: 992px) {
+    font-size: 19px;
+  }
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+  @media (max-width: 576px) {
+    font-size: 17px;
+  }
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+}
+

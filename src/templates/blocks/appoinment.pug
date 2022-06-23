@@ -1,0 +1,16 @@
+section.page__appoinment.appoinment
+  .appoinment__container.container
+    .appoinment__wrapper
+      .appoinment__body
+        h2.appoinment__title It’s time change your life today
+        .appoinment__btn-block
+          +button(
+            'appoinment', /* класс */
+            'appoinment', /* модификатор */
+            'Book an Appoinment', /* текст */
+            'button', /* тип */
+            'Book an Appoinment', /* содержимое атрибута title */
+            false, /* иконка */
+            false, /* альтернативный текст иконки */
+          )
+    img.appoinment__background(src="@img/appoinment/smiling.png", alt="smiling")
