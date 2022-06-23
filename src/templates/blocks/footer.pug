@@ -48,7 +48,7 @@ footer.footer
         +logo('info')
         .info__adress
           a.info__link(href="https://www.google.com/maps" target="_blank" title="Google maps") Metairie, 3689 Bassel Street, LA, Louisiana
-        .info__phone
+        .info__phone(id='phone')
           a.info__link(href="tel:225-788-5489" title="Contact") Contact us: 225-788-5489
         +social(
           'footer-top',
@@ -64,7 +64,7 @@ footer.footer
             item.list,
             item.title
           )
-      .footer-top__subscribe.subscribe
+      .footer-top__subscribe.subscribe(id='message')
         h5.subscribe__title Subscribe newsletter
         p.subscribe__text Sign up for tips, new destinations, and exclusive promos.
         form.subscribe__form

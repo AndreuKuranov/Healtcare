@@ -2,14 +2,16 @@
   "name": "gulp",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://andreukuranov.github.io/Healtcare/",
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
     "sprite": "gulp sprite",
     "zip": "gulp deployZIP --production",
-    "deploy": "gulp deployFTP --production",
+    "deployFTP": "gulp deployFTP --production",
     "dev": "gulp dev",
-    "build": "gulp build --production"
+    "build": "gulp build --production",
+    "deploy": "gh-pages -d dist"
   },
   "author": "A.Kuranov",
   "license": "ISC",
@@ -19,6 +21,7 @@
     "babel-loader": "^8.2.5",
     "browser-sync": "^2.27.10",
     "del": "^6.1.1",
+    "gh-pages": "^4.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",

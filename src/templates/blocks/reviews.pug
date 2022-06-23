@@ -4,7 +4,7 @@
       img: '@img/reviews/avatar1.jpg', 
       name: 'Alan Zara dilan',
       geolocation: 'New York, America, USA',
-      commit: 'Telehealth is fueled by digital technologies and DocTime telemedicine app has brought a great revolution in medical services specially an overpopulated country where virtual chamber can create at anywhere thoughout country',
+      commit: 'Telehealth is fueled by digital technologies and DocTime telemedicine app has brought a great revolution in medical services specially an overpopulated country where virtual chamber can create at anywhere thoughout country Telehealth is fueled by digital technologies and DocTime telemedicine app has brought a great revolution in medical services specially an overpopulated country where virtual chamber can create at anywhere thoughout country',
     },
     {
       img: '@img/reviews/avatar3.jpg', 
@@ -49,19 +49,22 @@ section.page__reviews.reviews
       false, /* модификатор line-height */
       false /* модификатор letter-spacing */
     )
-    .reviews__swiper.swiper
-      .swiper-wrapper.reviews__swiper-wrapper
-        each item in reviewsItem
-          .swiper-slide.reviews__swiper-slide
-            .reviews__column
-              .reviews__icon-block
-                img.reviews__avatar(src=item.img, alt="avatar")
-              .reviews__row
-                h4.reviews__name= item.name
-                .reviews__rating
-              a.reviews__geolocation= item.geolocation
-              p.reviews__commit= item.commit
+    .reviews__body
+      button.reviews__btn.reviews__btn--prev(type='buttom')
+      button.reviews__btn.reviews__btn--next(type='buttom')
+      .reviews__swiper.swiper
+        .swiper-wrapper.reviews__swiper-wrapper
+          each item in reviewsItem
+            .swiper-slide.reviews__swiper-slide
+              .reviews__column
+                .reviews__icon-block
+                  img.reviews__avatar(src=item.img, alt="avatar")
+                .reviews__row
+                  h4.reviews__name= item.name
+                  .reviews__rating
+                a.reviews__geolocation= item.geolocation
+                p.reviews__commit.reviews__commit--overflow= item.commit
 
-      .swiper-button-prev.reviews__swiper-button.reviews__swiper-button-prev
-      .swiper-button-next.reviews__swiper-button.reviews__swiper-button-next
+        .swiper-button-prev.reviews__swiper-button.reviews__swiper-button-prev
+        .swiper-button-next.reviews__swiper-button.reviews__swiper-button-next
   img.reviews__background-left(src="@img/reviews/Layerblur11.png", alt="background")

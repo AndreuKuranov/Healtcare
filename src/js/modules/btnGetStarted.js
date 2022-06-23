@@ -5,7 +5,7 @@ export const btnGetStarted = () => {
 
   let btnGetIcon = document.createElement('img');
   btnGetIcon.classList.add('btn__icon');
-  btnGetIcon.src = '../img/icons/sprite-multi.svg#getStarted';
+  btnGetIcon.src = 'img/icons/sprite-multi.svg#getStarted';
 
   let textBtn = btnGet.textContent;
 

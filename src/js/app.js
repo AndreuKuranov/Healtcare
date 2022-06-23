@@ -4,6 +4,7 @@ import { isWebp } from "./modules/isWebp.js";
 import { checkClass } from "./modules/functions.js";
 import { btnGetStarted } from "./modules/btnGetStarted.js";
 import { menu } from "./modules/menu.js";
+import { modal } from "./modules/modal.js";
 
 isWebp();
 btnGetStarted();
@@ -73,7 +74,7 @@ if (reviewsSwiper) {
         spaceBetween: 20,
       },
       320: { 
-        slidesPerView: 1.2,
+        slidesPerView: 1,
         spaceBetween: 20,
       },
     },
@@ -91,55 +92,77 @@ if (reviewsSwiper) {
   });
 }
 
-const modal = () => {
-  const modalBtn = document.querySelectorAll('.search__modal');
+// я не разобралася можно ли у слайдера swiper переназначить кнопки навигации и сделал имитацию клика по ним. 
+// Почему так поступил, по тому что, от стилизовать кнопки можно, а вот вытащить их за пределы слайдера нельзя, 
+// переписывание внутренних классов ломало верстку. Не думаю, что так можно использовать new Event, но вроде работает)
+const swiperBtn = () => {
+  const reviews = document.querySelector('.reviews');
 
-  const modalWin = (typeDevice) => {
-    const body = document.body;
-    const modalElement = document.querySelector('.modal');
-    const modalBody = modalElement.querySelector('.modal__body');
+  const reviewsBtnPrev = reviews.querySelector('.reviews__btn--prev');
+  const reviewsBtnNext = reviews.querySelector('.reviews__btn--next');
+  
+  const btnPrev = reviews.querySelector('.reviews__swiper-button-prev');
+  const btnNext = reviews.querySelector('.reviews__swiper-button-next');
 
-    body.classList.add('body--scroll');
-    if (typeDevice === 'mouse') {
-      body.classList.add('body--padding');
-    }
+  const checkPrev = () => {
+    btnPrev.ariaDisabled === 'true' ? reviewsBtnPrev.disabled = true : reviewsBtnPrev.disabled = false
+  };
+  const checkNext = () => {
+    btnNext.ariaDisabled === 'true' ? reviewsBtnNext.disabled = true : reviewsBtnNext.disabled = false
+  };
 
-    modalElement.classList.add('modal--open', 'modal--on-animation');
-    modalBody.classList.add('modal__body--on-animation');
+  let event = new Event("click");
 
-    const f = (e) => {
-      if (checkClass(e.target, 'modal') || checkClass(e.target, 'modal__btn')) {
+  reviewsBtnPrev.addEventListener('click', e => {
+    btnPrev.dispatchEvent(event);
 
-        modalElement.classList.remove('modal--on-animation');
-        modalBody.classList.remove('modal__body--on-animation');
+    checkPrev();
+    checkNext();
+  });
 
-        modalElement.classList.add('modal--off-animation');
-        modalBody.classList.add('modal__body--off-animation');
+  reviewsBtnNext.addEventListener('click', e => {
+    btnNext.dispatchEvent(event);
 
-        modalElement.removeEventListener('click', f);
-
-        setTimeout(() => {
-          body.classList.remove('body--scroll');
-          if (typeDevice === 'mouse') {
-            body.classList.remove('body--padding');
-          }
-          modalBody.classList.remove('modal__body--off-animation');
-          modalElement.classList.remove('modal--open', 'modal--off-animation');
-        }, 1000);
-      }
-    } 
-
-    modalElement.addEventListener('click', f);
-  }
-
-  for (let i = 0; i < modalBtn.length; i++) {
-    modalBtn[i].addEventListener('click', e => {
-      // console.log(modalBtn[i].dataset.name);
-      // console.log(e.pointerType);
-
-      modalWin(e.pointerType);
-    });
-  }
+    checkPrev();
+    checkNext();
+  });
 }
 
-modal();
+swiperBtn();
+
+const callingModal = () => {
+  const searchModal = document.querySelectorAll('.search__modal');
+  const reviewsSwiperWrapper = document.querySelector('.reviews__swiper-wrapper');
+
+  for (let i = 0; i < searchModal.length; i++) {
+    searchModal[i].addEventListener('click', e => {
+      const elementId = document.getElementById(searchModal[i].dataset.name);
+      let clon;
+
+      if (elementId) {
+        clon = elementId.cloneNode(true);
+        clon.removeAttribute('id');
+      }
+
+      modal(e.pointerType, clon);
+    });
+  }
+
+  reviewsSwiperWrapper.addEventListener('click', e => {
+    for (let item of e.path) {
+      if (checkClass(item, 'reviews__column')) {
+        const clon = item.cloneNode(true);
+        const reviewsCommit = clon.querySelector('.reviews__commit');
+        reviewsCommit.classList.remove('reviews__commit--overflow');
+
+        modal(e.pointerType, clon);
+      }
+
+      if (checkClass(item, 'reviews__swiper-wrapper')) {
+        break
+      }
+    }
+  });
+}
+
+callingModal();

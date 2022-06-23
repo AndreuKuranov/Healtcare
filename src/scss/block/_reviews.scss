@@ -3,10 +3,75 @@
   padding: px2rem(120px) 0 px2rem(100px) 0;
 
   &__container {
+    transition: 0.5s;
+    @media (min-width: 1341px) {
+      max-width: 1340px;
+    }
   }
 
   &__title-block {
     margin-bottom: px2rem(82px);
+  }
+
+  &__body {
+    position: relative;
+    transition: 0.5s;
+
+    @media (min-width: 1341px) {
+      padding: 0 83px;
+    }
+    @media (max-width: 1340px) {
+      padding: 0 px2rem(38px);
+    }
+  }
+
+  &__btn {
+    @include blockCenter;
+
+    position: absolute;
+    top: calc(50% - 16px);
+    transition: 0.5s;
+    border: none;
+    border-radius: px2rem(5px);
+    box-shadow: 0 4px 22px rgba($blackColor, 0.05);
+    background: $baseLightColor;
+    cursor: pointer;
+    width: px2rem(33.45px);
+    height: px2rem(32px);
+
+    &::after {
+      @extend %afterBefore;
+
+      border-bottom: px2rem(3px) solid $whiteColor;
+      border-left: px2rem(3px) solid $whiteColor;
+      width: px2rem(9px);
+      height: px2rem(9px);
+    }
+
+    &:disabled {
+      opacity: 1;
+      background: linear-gradient(133.16deg, rgba(154, 208, 255, 0.1065) 0%, rgba(111, 188, 255, 0.1005) 112.21%);
+
+      &::after {
+        border-color: $baseLightColor;
+      }
+    }
+  }
+
+  &__btn--prev {
+    left: 0;
+
+    &::after {
+      transform: rotate(45deg) translateX(2px) translateY(-2px);
+    }
+  }
+
+  &__btn--next {
+    right: 0;
+
+    &::after {
+      transform: rotate(-135deg) translateX(2px) translateY(-2px);
+    }
   }
 
   // ------------ swiper ------------
@@ -17,49 +82,16 @@
   }
 
   &__swiper-button {
-    position: absolute;
-    transition: 0.5s;
-    border-radius: px2rem(5px);
-    box-shadow: 0 4px 22px rgba($blackColor, 0.05);
-    background: $baseLightColor;
-    width: px2rem(33.45px);
-    height: px2rem(32px);
-
-    &::after {
-      border-bottom: px2rem(3px) solid $whiteColor;
-      border-left: px2rem(3px) solid $whiteColor;
-      width: px2rem(9px);
-      height: px2rem(9px);
-      font-family: none;
-      content: '';
-    }
-
-    &[aria-disabled='true'] {
-      opacity: 1;
-      background: linear-gradient(133.16deg, rgba(154, 208, 255, 0.1065) 0%, rgba(111, 188, 255, 0.1005) 112.21%);
-
-      &::after {
-        border-color: $baseLightColor;
-      }
-    }
   }
 
   &__swiper-button-prev {
-    top: 52%;
-    left: 5px;
-
-    &::after {
-      transform: rotate(45deg) translateX(2px) translateY(-2px);
-    }
+    top: 0;
+    left: -100vw;
   }
 
   &__swiper-button-next {
-    top: 52%;
-    right: px2rem(5px);
-
-    &::after {
-      transform: rotate(-135deg) translateX(2px) translateY(-2px);
-    }
+    top: 0;
+    right: -100vw;
   }
   // ----------------------------------
 
@@ -126,15 +158,18 @@
   }
 
   &__commit {
-    display: -webkit-box;
     margin: px2rem(22px) 0 0 0;
-    max-height: 152px;
-    overflow: hidden;
-    text-overflow: ellipsis;
     line-height: px2rem(25px);
     color: #454d5d;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
+
+    &--overflow {
+      display: -webkit-box;
+      max-height: 152px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+    }
   }
 
   &__background-left {
