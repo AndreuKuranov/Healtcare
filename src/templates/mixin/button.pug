@@ -4,7 +4,5 @@ mixin button(classBlock, classModifier, text, typeArg, titleArg, icon, altArg)
   - let textBtn = text ? text : ''
   
   button(class=`${classBlock}__${classBasic} ${classBasic}${classMod}` type=typeArg title=titleArg)= textBtn
-    //- if text
-    //-   spen.btn__text= text
     if icon
       img.btn__icon(src=icon, alt=altArg)

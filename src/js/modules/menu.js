@@ -2,10 +2,12 @@ import { checkClass } from "./functions.js";
 
 export const menu = () => {
   let btn = document.querySelector('.btn--menu');
-  let list = document.querySelector('.navbar__list');
 
-  btn.addEventListener('click', e => {
-    list.classList.toggle('navbar__list--open');
+  const f = () => {
+    btn.removeEventListener('click', f);
+
+    let list = document.querySelector('.navbar__list');
+    list.classList.add('navbar__list--open');
     btn.disabled = true;
 
     list.classList.add('navbar__list--on-animation');
@@ -20,7 +22,8 @@ export const menu = () => {
 
       document.body.removeEventListener('click', closeList);
       window.removeEventListener('resize', closesAccordingToWidth);
-      list.removeEventListener('click', closesOnLinkClick);
+
+      btn.addEventListener('click', f);
 
       setTimeout(() => {
         btn.disabled = false;
@@ -28,8 +31,15 @@ export const menu = () => {
       }, 1000);
     }
 
+    const closesOnLinkClick = (e) => {
+      if (checkClass(e.target, 'navbar__link')) {
+        closeEvent(false);
+      }
+    }
+
     const closeList = (e) => {
       let x = [];
+      closesOnLinkClick(e);
 
       for (let item of e.path) {
         for (let i of item.classList) {
@@ -51,22 +61,12 @@ export const menu = () => {
         closeEvent(true);
       }
     }
-
-    const closesOnLinkClick = (e) => {
-      if (checkClass(e.target, 'navbar__link')) {
-        closeEvent(false);
-      }
-    }
-
-    list.addEventListener('click', closesOnLinkClick);
     window.addEventListener('resize', closesAccordingToWidth);
 
-    if (checkClass(list, 'navbar__list--open')) {
-      setTimeout(() => {
-        document.body.addEventListener('click', closeList);
-      }, 0);
-    } else {
-      closeEvent(false);
-    }
-  });
+    setTimeout(() => {
+      document.body.addEventListener('click', closeList);
+    }, 0);
+  }
+
+  btn.addEventListener('click', f);
 }

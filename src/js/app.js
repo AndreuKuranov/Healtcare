@@ -92,44 +92,6 @@ if (reviewsSwiper) {
   });
 }
 
-// я не разобралася можно ли у слайдера swiper переназначить кнопки навигации и сделал имитацию клика по ним. 
-// Почему так поступил, по тому что, от стилизовать кнопки можно, а вот вытащить их за пределы слайдера нельзя, 
-// переписывание внутренних классов ломало верстку. Не думаю, что так можно использовать new Event, но вроде работает)
-const swiperBtn = () => {
-  const reviews = document.querySelector('.reviews');
-
-  const reviewsBtnPrev = reviews.querySelector('.reviews__btn--prev');
-  const reviewsBtnNext = reviews.querySelector('.reviews__btn--next');
-  
-  const btnPrev = reviews.querySelector('.reviews__swiper-button-prev');
-  const btnNext = reviews.querySelector('.reviews__swiper-button-next');
-
-  const checkPrev = () => {
-    btnPrev.ariaDisabled === 'true' ? reviewsBtnPrev.disabled = true : reviewsBtnPrev.disabled = false
-  };
-  const checkNext = () => {
-    btnNext.ariaDisabled === 'true' ? reviewsBtnNext.disabled = true : reviewsBtnNext.disabled = false
-  };
-
-  let event = new Event("click");
-
-  reviewsBtnPrev.addEventListener('click', e => {
-    btnPrev.dispatchEvent(event);
-
-    checkPrev();
-    checkNext();
-  });
-
-  reviewsBtnNext.addEventListener('click', e => {
-    btnNext.dispatchEvent(event);
-
-    checkPrev();
-    checkNext();
-  });
-}
-
-swiperBtn();
-
 const callingModal = () => {
   const searchModal = document.querySelectorAll('.search__modal');
   const reviewsSwiperWrapper = document.querySelector('.reviews__swiper-wrapper');
@@ -164,5 +126,44 @@ const callingModal = () => {
     }
   });
 }
-
 callingModal();
+
+// я не разобралася можно ли у слайдера swiper переназначить кнопки навигации и сделал имитацию клика по ним. 
+// Почему так поступил, по тому что, стилизовать кнопки можно, а вот вытащить их за пределы слайдера хз как, 
+// переписывание внутренних классов ломало верстку. 
+// Не думаю, что так можно использовать new Event, но вроде работает)
+const swiperBtn = () => {
+  const reviews = document.querySelector('.reviews');
+
+  const reviewsBtnPrev = reviews.querySelector('.reviews__btn--prev');
+  const reviewsBtnNext = reviews.querySelector('.reviews__btn--next');
+  
+  const btnPrev = reviews.querySelector('.reviews__swiper-button-prev');
+  const btnNext = reviews.querySelector('.reviews__swiper-button-next');
+
+  let event = new Event('click');
+
+  const btn = [
+    { reviewsBtn: reviewsBtnPrev, swiperBtn: btnPrev },
+    { reviewsBtn: reviewsBtnNext, swiperBtn: btnNext }
+  ];
+
+  const checkDisabled = (arr) => {
+    arr.forEach(item => item.swiperBtn.ariaDisabled === 'true' ? item.reviewsBtn.disabled = true : item.reviewsBtn.disabled = false)
+  }
+
+  for (let item of btn) {
+    item.reviewsBtn.addEventListener('click', e => {
+      item.swiperBtn.dispatchEvent(event);
+
+      checkDisabled(btn);
+    });
+  }
+
+  reviews.addEventListener('pointerup', e => {
+    setTimeout(() => {
+      checkDisabled(btn);
+    }, 0)
+  });
+}
+swiperBtn();

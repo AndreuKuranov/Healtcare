@@ -1,10 +1,3 @@
--
-  let socialIcon = {
-    facebook: 'img/icons/sprite-multi.svg#facebook',
-    twitter: 'img/icons/sprite-multi.svg#twitter', 
-    linkedin: 'img/icons/sprite-multi.svg#linkedin', 
-  }
-
 mixin social(classBlock, arr, classModifier)
   - let classBasic = 'social'
   - let classMod = classModifier ? ` ${classBasic}--${classModifier}` : ''
@@ -14,4 +7,4 @@ mixin social(classBlock, arr, classModifier)
       li.social__item
         a(class=`social__link social__link--${item.title}`, href=item.href)
           svg(class=`social__svg social__svg--${item.title}`)
-            use(xlink:href=socialIcon[item.title])
+            use(xlink:href=`img/icons/sprite-multi.svg#${item.title}`)
