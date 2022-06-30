@@ -10,21 +10,31 @@
 
   &__body {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: px2rem(-40px);
+    justify-content: space-between;
+    margin: px2rem(-20px) px2rem(-10px);
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
   }
 
   &__column {
-    flex: 0 1 33.333%;
+    @media (max-width: 768px) {
+      flex: 0 1 50%;
+    }
+    @media (max-width: 480px) {
+      display: flex;
+      flex: 0 1 100%;
+      justify-content: center;
+    }
   }
 
   &__item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: px2rem(40px);
-    min-width: px2rem(320px);
+    margin: px2rem(20px) 0;
+    max-width: px2rem(340px);
   }
 
   &__icon {
@@ -54,6 +64,7 @@
 
   &__text {
     margin: 0;
+    padding: 0 px2rem(10px);
     text-align: center;
     line-height: px2rem(20px);
     color: rgba($blackColor, 0.5);

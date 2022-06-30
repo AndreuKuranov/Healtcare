@@ -37,6 +37,10 @@
     margin-top: px2rem(42px);
     gap: 10px;
 
+    @media (max-width: 992px) {
+      justify-content: flex-end;
+    }
+
     @media (max-width: 480px) {
       flex-direction: column;
       align-items: flex-end;
@@ -79,15 +83,19 @@
       max-width: 100%;
     }
     @media (max-width: 992px) {
-      left: px2rem(-170px);
+      left: -170px;
     }
     @media (max-width: 768px) {
+      bottom: -100px;
       opacity: 0.8;
-      width: 700px;
+      width: px2rem(700px);
     }
     @media (max-width: 480px) {
       left: -140px;
       width: 600px;
+    }
+    @media (max-width: 375px) {
+      left: -200px;
     }
   }
 

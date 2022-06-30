@@ -85,6 +85,9 @@
     @media (max-width: 992px) {
       opacity: 0.9;
     }
+    @media (max-width: 576px) {
+      display: none;
+    }
 
     &--doctor {
       right: -4%;

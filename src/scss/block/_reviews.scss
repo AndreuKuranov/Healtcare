@@ -103,6 +103,7 @@
     background: linear-gradient(132.1deg, rgba(255, 255, 255, 0.88) 0.65%, #fafafa 103.13%);
     padding: px2rem(22px) px2rem(17px) px2rem(36px) px2rem(48px);
     max-width: 371px;
+    min-height: px2rem(348px);
     box-sizing: border-box;
 
     &::before {

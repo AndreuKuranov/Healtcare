@@ -9,12 +9,13 @@
     font-family: $fontDM;
 
     .link-list__list {
+      margin-top: px2rem(-4px);
       gap: px2rem(54px);
     }
   }
 
   &__title {
-    margin: 0 0 px2rem(22px) 0;
+    margin: 0 0 px2rem(21px) 0;
     line-height: 16px;
     color: $additionalFooterColor;
     font: {
