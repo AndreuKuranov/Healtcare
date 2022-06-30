@@ -1,24 +1,22 @@
-@charset 'utf-8';
-
 @import '../../node_modules/normalize.css/normalize';
 @import '../../node_modules/swiper/swiper-bundle';
 
-@import 'helpers';
-@import 'fonts';
-@import 'variables';
-@import 'mixin';
-@import 'animations';
-@import 'html';
-@import 'wrapper';
-@import 'all';
-@import 'modal';
+@import 'common/helpers';
+@import 'common/variables';
+@import 'common/fonts';
+@import 'common/mixin';
+@import 'common/animations';
+@import 'common/html';
+@import 'common/wrapper';
+@import 'common/all';
 
-@import 'button';
-@import 'title-block';
-@import 'swiper';
-@import 'logo';
-@import 'social';
-@import 'link-list';
+@import 'reused-blocks/button';
+@import 'reused-blocks/title-block';
+@import 'reused-blocks/modal';
+@import 'reused-blocks/swiper';
+@import 'reused-blocks/logo';
+@import 'reused-blocks/social';
+@import 'reused-blocks/link-list';
 
 @import 'block/header';
 @import 'block/commit';

@@ -13,7 +13,7 @@ export const images = () => {
     .pipe(
       app.plugins.if(
         app.isProd,
-        webp()
+        webp({quality: 100})
       )
     )
     .pipe(
@@ -41,7 +41,7 @@ export const images = () => {
           progressive: true,
           svgoPlugins: [{ removeViewBox: false }],
           interlaced: true,
-          optimizationLevel: 3 // 0 to 7
+          optimizationLevel: 2, // 0 to 7
         })
       )
     )
