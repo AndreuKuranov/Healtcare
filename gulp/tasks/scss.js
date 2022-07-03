@@ -51,7 +51,10 @@ export const scss = () => {
         app.isProd,
         autoprefixer({
           grid: true,
-          overrideBrowserslist: ['last 2 versions'],
+          overrideBrowserslist: [
+            "last 2 version",
+            "not dead"
+          ],
           cascade: true
         })
       )
